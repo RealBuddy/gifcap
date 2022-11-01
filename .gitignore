@@ -2,3 +2,6 @@ node_modules
 dist/*
 !dist/ticker.js
 encoder/.DS_Store
+.DS_Store
+uploads/
+src/main.ts

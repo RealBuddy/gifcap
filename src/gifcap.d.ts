@@ -42,4 +42,5 @@ export interface App {
   cancelRendering(): void;
   editGif(): void;
   discardGif(): void;
+  upload(blob: any): void;
 }

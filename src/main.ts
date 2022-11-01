@@ -150,6 +150,25 @@ class Main implements App {
     this.state = { name: "previewing", recording: this.state.recording, renderOptions: this.state.renderOptions };
   }
 
+  async upload(gif: any) {
+    try {
+
+      const body = new FormData()
+      const file = new File([gif.blob], gif.url+".gif");
+      body.append("gif", file)
+      const response:any  = await m.request({
+        method: "POST",
+        url: "/upload/upload",
+        body: body,
+      })
+if (response && response.data){
+  console.log("🚀 ~ file: main.ts ~ line 157 ~ Main ~ upload ~ response", response.data.name);
+}
+    } catch (err) {
+      console.log("🚀 ~ file: main.ts ~ line 158 ~ Main ~ upload ~ err", err);
+    }
+    return true;
+  }
   discardGif() {
     if (!window.confirm("This will discard the current recording, are you sure you want to continue?")) {
       return;
