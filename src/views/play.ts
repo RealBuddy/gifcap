@@ -40,8 +40,8 @@ export default class PlayView implements m.ClassComponent<PlayViewAttrs> {
 
     const actions = [
       m(Button, {
-        label: "Upload",
-        icon: "download",
+        label: "Insert",
+        icon: "file-media",
         a: {
           // href: this.gif.url,
           download,

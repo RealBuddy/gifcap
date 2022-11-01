@@ -162,11 +162,13 @@ class Main implements App {
         body: body,
       })
 if (response && response.data){
-  console.log("🚀 ~ file: main.ts ~ line 157 ~ Main ~ upload ~ response", response.data.name);
+    // In production, DO NOT use '*', use toe target domain
+  window?.opener?.postMessage({name:response.data.name,window:window.parent.name}, "*"); 
 }
     } catch (err) {
       console.log("🚀 ~ file: main.ts ~ line 158 ~ Main ~ upload ~ err", err);
     }
+    
     return true;
   }
   discardGif() {
